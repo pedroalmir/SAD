@@ -1,15 +1,11 @@
 package com.pedroalmir.optimization.controller;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -55,6 +51,7 @@ public class ServicesServlet extends HttpServlet {
 			if(isMultipart){
 				InputModel model = HttpRequestMultipart.processRequest(request);
 				ArrayList<Animal> animais = getAnimais(model.getData());
+				
 				System.out.println(model);
 				
 				dispatcher = request.getRequestDispatcher("index.jsp");
@@ -70,8 +67,8 @@ public class ServicesServlet extends HttpServlet {
 	 * @return
 	 */
 	private ArrayList<Animal> getAnimais(byte[] data) {
+		ArrayList<Animal> animais = new ArrayList<Animal>();
 		try {
-			ArrayList<Animal> animais = new ArrayList<Animal>();
 			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 			CSVReader reader = new CSVReader(new InputStreamReader(new ByteArrayInputStream(data)), ';');
 			List<String[]> list = reader.readAll();
@@ -103,6 +100,6 @@ public class ServicesServlet extends HttpServlet {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return animais;
 	}
 }

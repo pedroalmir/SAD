@@ -1,6 +1,7 @@
 package com.pedroalmir.optimization.model.domain;
 
 import java.util.Date;
+import java.util.HashMap;
 
 import com.pedroalmir.optimization.model.domain.enuns.SexoEnum;
 
@@ -48,6 +49,20 @@ public class Animal {
 		this.sexo = sexo;
 		this.peso = peso;
 		this.vivo = vivo;
+	}
+
+	/**
+	 * @param parameters
+	 */
+	public Animal(HashMap<String, Object> parameters) {
+		this.idAnimal = (Long) parameters.get("idAnimal");
+		this.idPai = (Long) parameters.get("idPai");
+		this.idMae = (Long) parameters.get("idMae");
+		this.dataNascimento = (Date) parameters.get("dataNascimento");
+		this.dataColeta = (Date) parameters.get("dataColeta");
+		this.sexo = (SexoEnum) parameters.get("sexo");
+		this.peso = (Double) parameters.get("peso");
+		this.vivo = (Boolean) parameters.get("vivo");
 	}
 
 	/**
