@@ -3,7 +3,7 @@
  */
 package com.pedroalmir.optimization.model.algorithm.solution;
 
-import java.util.LinkedHashSet;
+import java.util.ArrayList;
 
 import com.pedroalmir.optimization.model.algorithm.problem.Item;
 
@@ -12,7 +12,7 @@ import com.pedroalmir.optimization.model.algorithm.problem.Item;
  * @author Pedro Almir
  */
 public class KnapsackSolution {
-	private LinkedHashSet<Item> selectedItems;
+	private ArrayList<Item> selectedItems;
 	private double fitness;
 	private double accumulatedWeight;
 	
@@ -20,7 +20,7 @@ public class KnapsackSolution {
 	 * @param selectedItems
 	 * @param fitness
 	 */
-	public KnapsackSolution(LinkedHashSet<Item> selectedItems, double fitness) {
+	public KnapsackSolution(ArrayList<Item> selectedItems, double fitness) {
 		super();
 		this.selectedItems = selectedItems;
 		this.fitness = fitness;
@@ -30,7 +30,7 @@ public class KnapsackSolution {
 	 * Default constructor
 	 */
 	public KnapsackSolution() {
-		this.selectedItems = new LinkedHashSet<Item>();
+		this.selectedItems = new ArrayList<Item>();
 	}
 	
 	/**
@@ -45,7 +45,7 @@ public class KnapsackSolution {
 	 */
 	public void copy(KnapsackSolution auxSolution) {
 		this.fitness = auxSolution.getFitness();
-		this.selectedItems = new LinkedHashSet<Item>(auxSolution.getSelectedItems());
+		this.selectedItems = new ArrayList<Item>(auxSolution.getSelectedItems());
 	}
 	
 	/**
@@ -59,13 +59,13 @@ public class KnapsackSolution {
 	/**
 	 * @return the selectedItems
 	 */
-	public LinkedHashSet<Item> getSelectedItems() {
+	public ArrayList<Item> getSelectedItems() {
 		return selectedItems;
 	}
 	/**
 	 * @param selectedItems the selectedItems to set
 	 */
-	public void setSelectedItems(LinkedHashSet<Item> selectedItems) {
+	public void setSelectedItems(ArrayList<Item> selectedItems) {
 		this.selectedItems = selectedItems;
 	}
 	/**

@@ -3,6 +3,7 @@
  */
 package com.pedroalmir.optimization.model.algorithm.problem;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
@@ -16,8 +17,10 @@ public class KnapsackProblem {
 	/** List of items that will be 
 	 * selected and put in knapsack */
 	private LinkedHashSet<Item> items;
-	/** Knapsack restriction */
-	private double knapsackRestriction;
+	
+	/** Knapsack restrictions */
+	private double knapsackRestrictionMale;
+	private double knapsackRestrictionFemale;
 	
 	/**
 	 * Default constructor
@@ -36,7 +39,7 @@ public class KnapsackProblem {
 		}else{
 			this.items = new LinkedHashSet<Item>();
 		}
-		this.knapsackRestriction = knapsackRestriction;
+		this.knapsackRestrictionMale = knapsackRestriction;
 	}
 
 	/**
@@ -44,7 +47,7 @@ public class KnapsackProblem {
 	 */
 	public KnapsackProblem(double knapsackRestriction) {
 		this.items = new LinkedHashSet<Item>();
-		this.knapsackRestriction = knapsackRestriction;
+		this.knapsackRestrictionMale = knapsackRestriction;
 	}
 	
 	/**
@@ -76,6 +79,13 @@ public class KnapsackProblem {
 		});
 		return list;
 	}
+	
+	/**
+	 * @return an array list with items
+	 */
+	public ArrayList<Item> getArrayListOfItems(){
+		return new ArrayList<Item>(this.items);
+	}
 
 	/**
 	 * @return the items
@@ -95,14 +105,14 @@ public class KnapsackProblem {
 	 * @return the knapsackRestriction
 	 */
 	public double getKnapsackRestriction() {
-		return knapsackRestriction;
+		return knapsackRestrictionMale;
 	}
 
 	/**
 	 * @param knapsackRestriction the knapsackRestriction to set
 	 */
 	public void setKnapsackRestriction(double knapsackRestriction) {
-		this.knapsackRestriction = knapsackRestriction;
+		this.knapsackRestrictionMale = knapsackRestriction;
 	}
 
 	/* (non-Javadoc)
@@ -110,6 +120,22 @@ public class KnapsackProblem {
 	 */
 	@Override
 	public String toString() {
-		return "KnapsackProblem [items=" + items + ", knapsackRestriction=" + knapsackRestriction + "]";
+		return "KnapsackProblem [items=" + items + ", knapsackRestriction=" + knapsackRestrictionMale + "]";
+	}
+
+	public double getKnapsackRestrictionMale() {
+		return knapsackRestrictionMale;
+	}
+
+	public void setKnapsackRestrictionMale(double knapsackRestrictionMale) {
+		this.knapsackRestrictionMale = knapsackRestrictionMale;
+	}
+
+	public double getKnapsackRestrictionFemale() {
+		return knapsackRestrictionFemale;
+	}
+
+	public void setKnapsackRestrictionFemale(double knapsackRestrictionFemale) {
+		this.knapsackRestrictionFemale = knapsackRestrictionFemale;
 	}
 }

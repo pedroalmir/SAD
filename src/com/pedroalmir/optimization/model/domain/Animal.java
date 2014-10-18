@@ -13,6 +13,7 @@ public class Animal {
 	private Long idPai;
 	private Long idMae;
 	
+	private int idadeAtualAnos;
 	private Date dataNascimento;
 	private Date dataColeta;
 	private SexoEnum sexo;
@@ -173,5 +174,30 @@ public class Animal {
 	 */
 	public void setAptoAcasalamento(boolean aptoAcasalamento) {
 		this.aptoAcasalamento = aptoAcasalamento;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Animal [idAnimal=" + idAnimal + ", idPai=" + idPai + ", idMae="
+				+ idMae + ", dataNascimento=" + dataNascimento + ", sexo="
+				+ sexo + ", peso=" + peso + ", vivo=" + vivo
+				+ ", aptoAcasalamento=" + aptoAcasalamento + "]";
+	}
+
+	/**
+	 * @return the idadeAtualAnos
+	 */
+	public int getIdadeAtualAnos() {
+		return idadeAtualAnos;
+	}
+
+	/**
+	 * @param idadeAtualAnos the idadeAtualAnos to set
+	 */
+	public void setIdadeAtualAnos(int idadeAtualAnos) {
+		this.idadeAtualAnos = idadeAtualAnos;
 	}
 }

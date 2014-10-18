@@ -33,7 +33,6 @@ function sendRequest(json, items){
 }
 
 $(document).ready(function() {
-	
 	$('#execute').click(function(){
 		var btn = $(this);
 		$('#resultsPanel').show("slow", "swing");
